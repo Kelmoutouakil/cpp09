@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:11:33 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/15 13:53:03 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/19 13:35:45 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,38 @@
 #include <algorithm>
 #include<stack>
 #include<vector>
-struct element{
+
+typedef struct element
+{
     int nb;
-    int index;
+    std::vector<int>index;
+     element()
+     {
+        
+     }
+    element(const element &obj)
+    {
+        nb = obj.nb;
+        index = obj.index;
+    }
+    
     struct element *next;
-};
+    bool operator<(const element& other) const {
+        return nb < other.nb;}
+}element;
+
 class PmergeMe
 {
     private:
-        element *data;
+        element data;
         std::vector<element> myVector;
         std::vector<element>Store;
-        int impair;
+ 
     public:
         void doMergePair(std::vector<element>& v);
         void StoreVect(char **arr);
         PmergeMe();
-        int getImpair()const;
+
     
 };
-
 #endif 
