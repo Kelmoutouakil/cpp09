@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:11:33 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/19 13:35:45 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:46:47 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ class PmergeMe
         std::vector<element>Store;
  
     public:
-        void doMergePair(std::vector<element>& v);
+        void doMergePair(std::vector<element> v);
         void StoreVect(char **arr);
         PmergeMe();
 
