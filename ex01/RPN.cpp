@@ -6,11 +6,33 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:46:01 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/12 14:54:27 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/20 19:05:34 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"RPN.hpp"
+
+RPN::RPN()
+{
+   
+}
+RPN::~RPN()
+{
+   
+}
+        
+RPN::RPN(const RPN& other)
+{
+   *this= other;
+}
+RPN& RPN:: operator=(const RPN& other)
+{
+   if(this != &other)
+   {
+      myStack = other.myStack;
+   }
+   return(*this);
+}
 
 int RPN::splitInput(std::string& s) 
 {

@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:11:33 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/20 15:46:47 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:49:22 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,20 @@
 #include <algorithm>
 #include<stack>
 #include<vector>
+#include<deque>
 
 typedef struct element
 {
     int nb;
     std::vector<int>index;
      element()
-     {
-        
+     {    
      }
     element(const element &obj)
     {
         nb = obj.nb;
         index = obj.index;
     }
-    
     struct element *next;
     bool operator<(const element& other) const {
         return nb < other.nb;}
@@ -42,14 +41,21 @@ typedef struct element
 class PmergeMe
 {
     private:
-        element data;
         std::vector<element> myVector;
         std::vector<element>Store;
+        std::deque<element> mydeQue;
+        std::deque<element>Stock;
  
     public:
-        void doMergePair(std::vector<element> v);
-        void StoreVect(char **arr);
         PmergeMe();
+        PmergeMe& operator=(const PmergeMe& other);
+        PmergeMe(const PmergeMe& other);
+        ~PmergeMe();
+        void doSortVect(std::vector<element> v);
+        void doMergeSort(char **arr);
+        void doSortDeque(std::deque<element> d);
+        void printVector(std::vector<element> v);
+        void printDeque(std::deque<element> d);
 
     
 };

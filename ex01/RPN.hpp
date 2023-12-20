@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 10:17:35 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/12 14:07:53 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/20 19:03:40 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ class RPN
         std::stack<int>myStack;
       public:
         int splitInput(std::string& s);
-
-        
-    
+        RPN();
+        ~RPN();
+        RPN(const RPN& other);
+        RPN& operator=(const RPN& other);
 };
 
 

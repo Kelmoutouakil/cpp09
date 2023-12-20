@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 09:44:20 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/06 15:12:35 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/20 19:09:14 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ class BitcoinExchange
         std::map<int,double>myMap;
         std::string sDate;
     public:
-        BitcoinExchange(){}
+        BitcoinExchange();
+        ~BitcoinExchange();
+        BitcoinExchange(const BitcoinExchange& other);
+        BitcoinExchange& operator=(const BitcoinExchange& other);
         void StoreMap();
         int dateFormat(std::string& s);
         double valueFormat(std::string& str);
