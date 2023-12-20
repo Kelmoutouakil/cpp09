@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 09:52:29 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/20 19:14:15 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/20 19:53:09 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,17 @@ BitcoinExchange:: BitcoinExchange(const BitcoinExchange& other)
 {
     *this = other;
 }
-        BitcoinExchange& operator=(const BitcoinExchange& other);
+       
+       
+ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
+ {
+    if(this != &other)
+    {
+        myMap = other.myMap;
+        
+    }
+    return(*this);
+ }
 bool isLeapYear(int year) 
 {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
