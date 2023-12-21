@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:12:30 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/20 18:57:24 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/21 21:33:15 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,12 @@ void PmergeMe::doMergeSort(char **arr)
     while (arr[i])
     {
         element newData;
-        s = arr[i];
-        // std::cout <<"--->" <<s << "\n";
-        // if(s.find_first_not_of("012345678") != std::string::npos)
-        //     throw std::runtime_error("Error: positive sequence required ");
+       s = arr[i];
+        if(s.find_first_not_of("0123456789") != std::string::npos)
+            throw std::runtime_error("Error: positive sequence required ");
         newData.nb = atoi(arr[i]);
+  
+
         newData.next = NULL; 
         myVector.push_back(newData);
         mydeQue.push_back(newData);
