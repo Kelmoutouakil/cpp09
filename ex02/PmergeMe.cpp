@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:12:30 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/21 21:33:15 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/23 12:05:39 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,6 @@ void PmergeMe:: printVector(std::vector<element> v)
 {
     std::vector<element>::iterator iter = v.begin();
     for(;iter != v.end();++iter)
-        std::cout<< iter->nb << " ";
-    std::cout<<std::endl;
-}
-
-void printDeque(std::deque<element> d)
-{
-     std::deque<element>::iterator iter = d.begin();
-    for(;iter != d.end();++iter)
         std::cout<< iter->nb << " ";
     std::cout<<std::endl;
 }
@@ -102,6 +94,7 @@ void PmergeMe::doSortVect(std::vector<element> v)
         it += 2;
         j++;
     }
+    
     if (v.size() > 1) 
         this->doSortVect(temp);
     else 
@@ -109,7 +102,9 @@ void PmergeMe::doSortVect(std::vector<element> v)
         Store.push_back(*(v.begin()));
         return;
     }
+  
     std::vector<element> s;
+  
     for (std::vector<element>::iterator p = Store.begin(); p != Store.end(); ++p)
     {
         int a = p->index.back();
@@ -117,6 +112,10 @@ void PmergeMe::doSortVect(std::vector<element> v)
         p->index.pop_back();
         s.push_back(myVectorOfPairs[a].first);
     }
+    // std::vector<element>::iterator f = s.begin();
+    // for(;f!=s.end();f++)
+    //     std::cout<< f->nb << " ,";
+    // std::cout<<"\n";
     int k = 0;
     for (std::vector<element>::iterator ps = s.begin(); ps != s.end(); ++ps) 
     {
@@ -163,6 +162,7 @@ void PmergeMe:: doSortDeque(std::deque<element> d)
         p->index.pop_back();
         s.push_back(myVectorOfPairs[a].first);
     }
+    
     int k = 0;
     for (std::deque<element>::iterator ps = s.begin(); ps != s.end(); ++ps) 
     {
@@ -171,6 +171,7 @@ void PmergeMe:: doSortDeque(std::deque<element> d)
         Stock.insert(is, *ps);
         k++;
     } 
+    
     if(d.size() % 2 != 0)
     {
         std::deque<element>::iterator is = std::lower_bound(Stock.begin(), Stock.end(), d.back());

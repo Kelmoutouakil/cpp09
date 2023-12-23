@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:11:33 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/20 18:49:22 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/22 21:18:35 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,5 @@ class PmergeMe
         void doMergeSort(char **arr);
         void doSortDeque(std::deque<element> d);
         void printVector(std::vector<element> v);
-        void printDeque(std::deque<element> d);
-
-    
 };
 #endif 

@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 09:52:29 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/20 19:53:09 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/23 11:26:13 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,6 @@ void BitcoinExchange::StoreMap()
             str = line.substr(i+1,line.length());
             myMap[std::atoi(s.c_str())] = std::atof(str.c_str());
         }
-        // std::map<int,double>::iterator it = myMap.begin();
-        // for(;it != myMap.end();++it)
-        // {
-        //     std::cout << it->first<< "    -->"<<it->second<<"\n";
-        // }
      }
 }
 
@@ -90,7 +85,7 @@ int BitcoinExchange:: dateFormat(std::string& s)
          throw std::runtime_error("Error: bad input");
     if((t[1]).find_first_not_of(tmp)!= std::string::npos || atoi(t[1].c_str()) <= 0 || atoi(t[1].c_str()) > 12)
         throw std::runtime_error("Error: bad input");
-    if(atoi(t[1].c_str()) == 02)
+    if(atoi(t[1].c_str()) == 2)
     {
         if(isLeapYear(atoi(t[0].c_str())))
         {
@@ -99,7 +94,7 @@ int BitcoinExchange:: dateFormat(std::string& s)
         }
         else
         {
-            if(atoi(t[2].c_str()) > 29)
+            if(atoi(t[2].c_str()) >= 29)
                 throw std::runtime_error("not leapyear");
         }
     }
@@ -130,7 +125,8 @@ void BitcoinExchange:: CoinExchange(int date,double value)
             else if(it != myMap.begin() && it->first == date )
                 std::cout<<sDate<< "=>"<<" "<<value<<" = " << it->second * value <<std::endl;
             else if(it != myMap.begin())
-               { --it;
+            {
+                --it;
                 std::cout<<sDate<< "=>"<<" "<<value<<" = " <<it->second * value <<std::endl;
             }
             else

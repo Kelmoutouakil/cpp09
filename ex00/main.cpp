@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 09:46:49 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/07 09:44:25 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/23 11:57:46 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int main(int ac,char *av[])
                                 i++;
                             s = line.substr(0,i);
                             str = line.substr(i+2,line.length() - (i + 2));
+                            if(str == "\0")
+                                 throw std::runtime_error("Error: bad input => "+ line);
                             int date = o.dateFormat(s);
                             double value = o.valueFormat(str);
                             o.CoinExchange(date,value);
@@ -61,6 +63,7 @@ int main(int ac,char *av[])
         }
         else
             throw std::invalid_argument("Error: could not open file.");
+        // system("leaks btc");
     }
     catch(const std::exception& e)
     {

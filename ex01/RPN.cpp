@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:46:01 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/12/20 19:05:34 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/12/23 11:32:37 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int RPN::splitInput(std::string& s)
       else
          throw std::runtime_error("Error");
    }
+   if(myStack.size() != 1)
+      throw std::runtime_error("Error");
     return myStack.top();
 }
 
