@@ -69,12 +69,6 @@ This project is part of the 42 School curriculum, focusing on advanced C++ progr
 - [C++ STL Documentation](https://en.cppreference.com/w/cpp/standard_library)
 - [42 School Forum](https://forum.42.fr/)
 
-## Contributing
-Contributions are encouraged! To contribute:
-1. Fork this repository.
-2. Create a branch for your feature or bug fix.
-3. Submit a pull request with detailed explanations of your changes.
-
 ## License
 This project is part of the 42 School curriculum and adheres to its policies.
 
